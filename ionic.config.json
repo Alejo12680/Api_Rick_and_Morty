@@ -1,0 +1,7 @@
+{
+  "name": "api_Rick-Morty",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
