@@ -63,13 +63,14 @@ ion-toolbar {
 
 ion-card {
     margin: 20px;
-    background: rgba(7, 7, 7, 0.2);
+    background: rgba(0, 0, 0, 0.067);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10.3px);
+    -webkit-backdrop-filter: blur(10.3px);
+    border: 1px solid rgba(255, 255, 255, 0.348);
     color: white;
+    height: 90%;
 }
 
 ion-item {
@@ -92,5 +93,5 @@ ion-icon {
 }
 
 p {
-    font-size: 1em;
+    font-size: 1.1rem;
 }

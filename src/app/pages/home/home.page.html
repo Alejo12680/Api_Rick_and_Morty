@@ -7,23 +7,32 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content mode="ios">
   <div class="glass-content">
     <ion-grid>
       <ion-row>
+        <!-- La clase "d-flex-center" al parecer es de boostrap que ionic adopto para su funcionamiento -->
+        <ion-col size="12" class="d-flex-center">
+          <ion-searchbar placeholder="Buscar Personaje" [(ngModel)]="params.name" (ionInput)="searchCharacter()" [debounce]="250"></ion-searchbar>
+        </ion-col>
+      </ion-row>
 
-        <ion-col *ngFor="let personaje of character" size="12" sizeMd="6" sizeLg="6">
+      <ion-row>
+
+        <ion-col *ngFor="let personaje of character" size="12" sizeMd="12" sizeLg="6">
           <ion-card>
             <ion-grid>
               <ion-row>
-                <ion-col size="12" sizeSm="4">
+                <ion-col class="ion-padding" size="12" sizeSm="5" sizeMd="5" sizeLg="5">
                   <ion-avatar>
                     <img [src]="personaje.image" />
                   </ion-avatar>
                 </ion-col>
 
-                <ion-col size="12" sizeSm="8">
-                  
+                <ion-col class="ion-padding" size="12" sizeSm="7" sizeMd="7" sizeLg="7">
+                  <div class="name">{{personaje.name}} </div>
+                  <p>Visto por priemra vez: <br> <strong>{{personaje.origin.name}} </strong> </p>
+                  <p>Visto por ultima vez: <br> <strong>{{personaje.location.name}} </strong> </p>
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -32,5 +41,10 @@
 
       </ion-row>
     </ion-grid>
+
+    <ion-infinite-scroll threshold="25%" position="bottom" (ionInfinite)="getCharacter($event)">
+      <ion-infinite-scroll-content>
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
   </div>  
 </ion-content>

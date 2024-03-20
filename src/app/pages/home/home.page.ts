@@ -36,11 +36,36 @@ export class HomePage implements OnInit {
 
         // Revisamos la respuesta de la api en la cual hay un objeto que se llama 'results', como es un arreglo se necesita sacar los datos del arreglo y se puede hacer con sprit operaitor = (...)
         this.character.push(...res.results);
-        console.log(this.character);        
+        console.log(this.character);  
+        
+        // Si existe un evento (que se ejecuta en el scroll infinito), Tambien se puede colocar como un ternario: if(event) event.target.complete();
+
+        if (event)  {
+          event.target.complete();
+        }
 
       },
       error: (err: any) => {
+        if (event)  {
+          event.target.complete();
+        }
+      }
+    })
+  }
 
+  // Funcion de filtro para buscar personajes
+  searchCharacter() {
+    // Cada vez que se ejecute esta funcion el parametro de la pagina sumara 1, se inicia en la pagina uno para obtener los primeros 20 personajes.
+    this.params.page = 1;
+
+    // Consumimos el servicio de la api, se suscribe
+    this.rickAndMortySvc.obtenerCharacter(this.params).subscribe({
+      next: (res: any) => {
+
+        this.character = res.results;
+      },
+      error: (err: any) => {
+        
       }
     })
   }

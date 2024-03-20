@@ -14,7 +14,7 @@ export class IntroPage implements OnInit {
 
     setTimeout(() => {
       this.navCtrl.navigateRoot('/home');
-    }, 1500);
+    }, 1000);
   }
 
 }
