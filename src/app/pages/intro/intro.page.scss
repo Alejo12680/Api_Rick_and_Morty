@@ -1,0 +1,24 @@
+img {
+    padding-top: 22vh;
+    width: 100%;
+    max-width: 800px;
+}
+
+
+.blur-in-expand {
+    animation: blur-in-expand 0.4s linear both
+}
+
+@keyframes blur-in-expand {
+    0% {
+        transform: scale(0);
+        filter: blur(12px);
+        opacity: 0
+    }
+
+    100% {
+        transform: scale(1);
+        filter: blur(0);
+        opacity: 1
+    }
+}

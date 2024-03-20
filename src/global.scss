@@ -27,12 +27,13 @@
 
 
 .glass-content {
-    background: rgba(19, 63, 176, 0.27);
-    box-shadow: 0 4px 30px rgba(7, 77, 216, 0.1);
-    backdrop-filter: blur(25.3px);
-    -webkit-backdrop-filter: blur(25.3px);
+    background: rgba(5, 76, 143, 0.76);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.3px);
+    -webkit-backdrop-filter: blur(10.3px);
     width: 100%;
     min-height: 100vh;
+
 }
 
 .d-flex-center {
@@ -42,12 +43,12 @@
 }
 
 ion-content {
-    --ion-background-color: url(/assets/img/bg.gif);
+    --ion-background-color: url(/assets/img/DMF.gif);
     --color: white;
 }
 
 ion-header {
-    background: url(/assets/img/bg.gif);
+    background: url(/assets/img/DMF.gif);
 }
 
 ion-toolbar {
@@ -90,6 +91,6 @@ ion-icon {
     }
 }
 
-p{
+p {
     font-size: 1em;
 }
